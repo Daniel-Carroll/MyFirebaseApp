@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel='stylesheet' href='node_modules/angular-material/angular-material.css'>
+    <link rel="stylesheet" href="assets/app.css"/>
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak>
+
+
+    <md-toolbar layout="row" >
+      <div class="md-toolbar-tools">
+        <h1>FASTweb</h1>
+
+        <span flex></span>
+
+          <div>
+            <span ng-if="!ul.change" style="font-size:14px;">Current Store: {{ul.selectedStore}}</span>
+            <span ng-if="ul.change">
+                  <md-input-container layout="center center"><input style="margin-top:5px; color:white;" ng-model="ul.selectedStore"></md-input-container>
+            </span>
+          </div>
+
+          <md-button ng-if="!ul.change" class="md-raised headerbtn" aria-label="Change" ng-click="ul.change=true">Change</md-button>
+          <md-button ng-if="ul.change" class="md-raised headerbtn" aria-label="Confirm" ng-click="ul.change=false">Confirm</md-button>
+
+        <span flex></span>
+        <img src="assets/svg/user.svg" style="margin-right:5px;"><span style="font-size:14px;">c592690</span><img src="assets/svg/more_vert.svg" style="margin-left:5px;">
+      </div>
+
+    </md-toolbar>
+
+
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" layout="row" layout-align="center center" class="navbar">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+
+          <md-nav-item hide-xs md-nav-click="goto('page1')" name="page1">Receive</md-nav-item>
+          <md-nav-item hide-xs md-nav-click="goto('page2')" name="page2">Putaway</md-nav-item>
+          <md-nav-item hide-xs md-nav-click="goto('page3')" name="page3">Orders</md-nav-item>
+          <md-nav-item hide-xs md-nav-click="goto('page4')" name="page4">Tasks</md-nav-item>
+
+    </md-nav-bar>
+
+    <div flex layout="row">
+
+        <md-sidenav  ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" style="max-width: 100%;
+    overflow-x: hidden;overflow-y:hidden">
+
+          <md-toolbar style="background-color:#FFF;border-bottom:solid 1px #ebebeb">
+            <h1 class="md-toolbar-tools">
+                <input class="md-whiteframe-2dp" style="border:1px solid #ebebeb" placeholder=" Filter results..."> <md-button class="md-primary md-fab md-mini"><md-icon md-svg-src="assets/svg/search.svg"></md-icon></md-button>
+            </h1>
+          </md-toolbar>
+
+          <md-content>
+          <md-list>
+            <md-list-item ng-repeat="it in ul.users">
+                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                  <img src="assets/svg/location.svg" class="icon"/>
+                  {{it.name}} <span style="padding-left:10px;text-transform:initial;font-weight:300">{{it.content}}</span>
+                </md-button>
+            </md-list-item>
+          </md-list>
+        </md-content>
+        </md-sidenav>
+
+        <md-content flex id="content">
+          <div class="module-header" layout="row" layout-align="left center">
+            <md-icon md-svg-icon="assets/svg/location.svg" class="avatar"></md-icon>
+            <span class="module-header-title">{{ul.selected.name}}</span>
+            <span class="module-header-sub">{{ul.selected.content}}</span>
+
+
+          </div>
+
+          <div id="control-group">
+              <input class="md-whiteframe-1dp" style="border:none; height:30px;padding:0px; width:50%;" placeholder=" Enter Package ID to add to Putaway Location...">
+              <md-button class="md-primary md-raised md-cornered md-whiteframe-1dp; border-left:none;" style="min-height:30px;height:30px;line-height:30px;margin-left:0px;" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
+                Add Packages
+              </md-button>
+          </div>
+
+        <md-subheader class="md-primary" style="background-color:#ebebeb">699Pkg01</md-subheader>
+        <div flex layout="row">
+            <md-card>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">Card with image</span>
+                <span class="md-subhead">Small</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <div class="md-media-sm card-media"></div>
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Action 1</md-button>
+              <md-button>Action 2</md-button>
+            </md-card-actions>
+          </md-card>
+
+          <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">Card with image</span>
+              <span class="md-subhead">Small</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-sm card-media"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+          </md-card-actions>
+        </md-card>
+        </div>
+        </md-content>
+
+
+
+
+
+        <!-- Angular Material requires Angular.js Libraries -->
+      <script src="node_modules/angular/angular.js"></script>
+      <script src="node_modules/angular-animate/angular-animate.js"></script>
+      <script src="node_modules/angular-aria/angular-aria.js"></script>
+      <script src="node_modules/angular-messages/angular-messages.js"></script>
+
+      <!-- Angular Material Library -->
+      <script src="node_modules/angular-material/angular-material.js"></script>
+
+
+    <!-- Firebase Dependencies-->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
+    <script src="./src/users/StoreService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('blue')
+                          .accentPalette('red');
+
+              });
+
+    </script>
+
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDfm6VxmGuc3XmQFIyuuxyUxLEmoL9Tda0",
+    authDomain: "mywebapp-25bc0.firebaseapp.com",
+    databaseURL: "https://mywebapp-25bc0.firebaseio.com",
+    storageBucket: "mywebapp-25bc0.appspot.com",
+  };
+  firebase.initializeApp(config);
+    </script>
+
+  </body>
+</html>
