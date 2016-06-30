@@ -2,7 +2,7 @@
   'use strict';
 
   // Prepare the 'users' module for subsequent registration of controllers and delegates
-  angular.module('users', [ 'ngMaterial', 'ui.router' ]);
+  angular.module('stuff', [ 'ngMaterial', 'ui.router' ]);
 
 
 })();

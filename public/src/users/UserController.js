@@ -1,7 +1,7 @@
 (function(){
 
   angular
-       .module('users')
+       .module('stuff')
        .controller('UserController', [
           'userService', 'storeService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
           UserController

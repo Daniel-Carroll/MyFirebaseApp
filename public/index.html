@@ -24,12 +24,12 @@
 
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak>
+  <body ng-app="myApp" layout="column" ng-controller="UserController as ul" ng-cloak>
 
 
     <md-toolbar layout="row" >
       <div class="md-toolbar-tools">
-        <h1>FASTweb</h1>
+        <h1>STUFF</h1>
 
         <span flex></span>
 
@@ -85,6 +85,7 @@
         </md-content>
         </md-sidenav>
 
+
         <md-content flex id="content">
           <div class="module-header" layout="row" layout-align="left center">
             <md-icon md-svg-icon="assets/svg/location.svg" class="avatar"></md-icon>
@@ -137,6 +138,8 @@
         </div>
         </md-content>
 
+    </div>
+
 
 
         <!-- Angular Material requires Angular.js Libraries -->
@@ -165,7 +168,7 @@
     <script type="text/javascript">
 
           angular
-              .module('starterApp', ['ngMaterial', 'users'])
+              .module('myApp', ['ngMaterial', 'stuff'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider

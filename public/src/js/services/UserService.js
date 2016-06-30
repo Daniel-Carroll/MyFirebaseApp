@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('users')
+  angular.module('stuff')
          .service('userService', ['$q', UserService]);
 
   /**
