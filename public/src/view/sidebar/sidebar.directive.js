@@ -11,7 +11,7 @@
 
         return {
             restrict: 'EA',
-            templateUrl: "'src/view/sidebar/sidebar.html'",
+            templateUrl: "src/view/sidebar/sidebar.html",
             controllerAs: 'ul',
             controller: 'UserController',
 
