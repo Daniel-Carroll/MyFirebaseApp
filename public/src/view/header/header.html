@@ -1,0 +1,34 @@
+<md-toolbar layout="row" >
+    <div class="md-toolbar-tools">
+        <h1>STUFF</h1>
+
+        <span flex></span>
+
+        <div>
+            <span ng-if="!ul.change" style="font-size:14px;">Current Store: {{ul.selectedStore}}</span>
+            <span ng-if="ul.change">
+                  <md-input-container layout="center center"><input style="margin-top:5px; color:white;" ng-model="ul.selectedStore"></md-input-container>
+            </span>
+        </div>
+
+        <md-button ng-if="!ul.change" class="md-raised headerbtn" aria-label="Change" ng-click="ul.change=true">Change</md-button>
+        <md-button ng-if="ul.change" class="md-raised headerbtn" aria-label="Confirm" ng-click="ul.change=false">Confirm</md-button>
+
+        <span flex></span>
+        <img src="assets/svg/user.svg" style="margin-right:5px;"><span style="font-size:14px;">c592690</span><img src="assets/svg/more_vert.svg" style="margin-left:5px;">
+    </div>
+
+</md-toolbar>
+
+
+<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" layout="row" layout-align="center center" class="navbar">
+    <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+    </md-button>
+
+    <md-nav-item hide-xs md-nav-click="goto('page1')" name="page1">Receive</md-nav-item>
+    <md-nav-item hide-xs md-nav-click="goto('page2')" name="page2">Putaway</md-nav-item>
+    <md-nav-item hide-xs md-nav-click="goto('page3')" name="page3">Orders</md-nav-item>
+    <md-nav-item hide-xs md-nav-click="goto('page4')" name="page4">Tasks</md-nav-item>
+
+</md-nav-bar>

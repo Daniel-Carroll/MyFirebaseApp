@@ -1,0 +1,51 @@
+<md-content flex id="content">
+    <div class="module-header" layout="row" layout-align="left center">
+        <md-icon md-svg-icon="assets/svg/location.svg" class="avatar"></md-icon>
+        <span class="module-header-title">{{ul.selected.name}}</span>
+        <span class="module-header-sub">{{ul.selected.content}}</span>
+
+
+    </div>
+
+    <div id="control-group">
+        <input class="md-whiteframe-1dp" style="border:none; height:30px;padding:0px; width:50%;" placeholder=" Enter Package ID to add to Putaway Location...">
+        <md-button class="md-primary md-raised md-cornered md-whiteframe-1dp; border-left:none;" style="min-height:30px;height:30px;line-height:30px;margin-left:0px;" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
+            Add Packages
+        </md-button>
+    </div>
+
+    <md-subheader class="md-primary" style="background-color:#ebebeb">699Pkg01</md-subheader>
+    <div flex layout="row">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Card with image</span>
+                    <span class="md-subhead">Small</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Card with image</span>
+                    <span class="md-subhead">Small</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>
