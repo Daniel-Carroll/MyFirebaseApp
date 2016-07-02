@@ -1,10 +1,22 @@
-
-    <md-list>
+<div ng-switch on="sort">
+    <md-list ng-switch-when="Item">
         <md-list-item ng-repeat="it in ul.items">
-            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }" style="height: 60px;">
+            <md-button ng-click="ul.selectItem(it)" ng-class="{'selected' : it === ul.selected }" style="height: 60px;">
                 <i class="material-icons list-icon" >{{it.category}}</i>
                 <span class="list-name">{{it.name}}</span>
             </md-button>
         </md-list-item>
     </md-list>
+
+    <md-list ng-switch-when="Category">
+        <md-list-item ng-repeat="it in ul.categories">
+            <md-button ng-click="ul.selectItem(it)" ng-class="{'selected' : it === ul.selected }" style="height: 60px;">
+                <i class="material-icons list-icon" >{{it.category}}</i>
+                <span class="list-name">{{it.name}}</span>
+            </md-button>
+        </md-list-item>
+    </md-list>
+</div>
+
+
 

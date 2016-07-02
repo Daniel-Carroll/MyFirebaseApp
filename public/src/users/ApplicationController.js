@@ -21,7 +21,7 @@
     self.items        = [ ];
     self.categories       = null;
     self.selectedCategory= null;
-    self.selectUser   = selectUser;
+    self.selectItem   = selectItem;
     self.toggleList   = toggleUsersList;
     self.makeContact  = makeContact;
     self.change       = false;
@@ -38,7 +38,7 @@
     storeService
         .loadAllCategories()
         .then( function( category ){
-          self.stores = [].concat(category);
+          self.categories = [].concat(category);
           self.selectedCategory = category[0].name;
         })
 
@@ -64,7 +64,7 @@
      * Select the current avatars
      * @param menuId
      */
-    function selectUser ( user ) {
+    function selectItem ( user ) {
       self.selected = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
