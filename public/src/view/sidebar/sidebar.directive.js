@@ -5,19 +5,16 @@
 
     angular
         .module('stuff')
-        .directive('stuffSidebar', stuffSidebar);
+        .directive('sidebarList', sidebarList);
 
-    function stuffSidebar(){
+    function sidebarList(){
 
         return {
             restrict: 'EA',
-            templateUrl: "src/view/sidebar/sidebar.html",
-            controllerAs: 'ul',
-            controller: 'UserController',
-
+            templateUrl: "src/view/sidebar/sidebar-list.html"
         };
 
     }
 
 
-})
+})();

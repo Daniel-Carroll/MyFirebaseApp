@@ -1,0 +1,10 @@
+
+    <md-list>
+        <md-list-item ng-repeat="it in ul.users">
+            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                <img src="assets/svg/location.svg" class="icon"/>
+                {{it.name}} <span style="padding-left:10px;text-transform:initial;font-weight:300">{{it.content}}</span>
+            </md-button>
+        </md-list-item>
+    </md-list>
+

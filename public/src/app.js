@@ -13,9 +13,9 @@
               url:'/home',
               templateUrl: "src/view/home/home.html"
             })
-            .state('view2',{
-              url:'/view2',
-              templateUrl: "src/view/view2/view2.html"
+            .state('my-stuff',{
+              url:'/my-stuff',
+              templateUrl: "src/view/my-stuff/my-stuff.html",
             })
 
       })

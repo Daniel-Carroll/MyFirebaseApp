@@ -1,20 +1,9 @@
-<md-sidenav  ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" style="max-width: 100%;
-    overflow-x: hidden;overflow-y:hidden">
+<md-toolbar style="background-color:#FFF;border-bottom:solid 1px #ebebeb">
+    <h1 class="md-toolbar-tools">
+        <input class="md-whiteframe-2dp" style="border:1px solid #ebebeb" placeholder=" Filter results..."> <md-button class="md-primary md-fab md-mini"><md-icon md-svg-src="assets/svg/search.svg"></md-icon></md-button>
+    </h1>
+</md-toolbar>
 
-    <md-toolbar style="background-color:#FFF;border-bottom:solid 1px #ebebeb">
-        <h1 class="md-toolbar-tools">
-            <input class="md-whiteframe-2dp" style="border:1px solid #ebebeb" placeholder=" Filter results..."> <md-button class="md-primary md-fab md-mini"><md-icon md-svg-src="assets/svg/search.svg"></md-icon></md-button>
-        </h1>
-    </md-toolbar>
-
-    <md-content>
-        <md-list>
-            <md-list-item ng-repeat="it in ul.users">
-                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-                    <img src="assets/svg/location.svg" class="icon"/>
-                    {{it.name}} <span style="padding-left:10px;text-transform:initial;font-weight:300">{{it.content}}</span>
-                </md-button>
-            </md-list-item>
-        </md-list>
-    </md-content>
-</md-sidenav>
+<md-content>
+    <sidebar-list></sidebar-list>
+</md-content>

@@ -2,9 +2,9 @@
 
   angular
        .module('stuff')
-       .controller('UserController', [
+       .controller('AppController', [
           'userService', 'storeService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
-          UserController
+           AppController
        ]);
 
   /**
@@ -14,7 +14,7 @@
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, storeService, $mdSidenav, $mdBottomSheet, $timeout, $log  ) {
+  function AppController( userService, storeService, $mdSidenav, $mdBottomSheet, $timeout, $log  ) {
     var self = this;
 
     self.selected     = null;
