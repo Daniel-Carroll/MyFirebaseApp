@@ -1,9 +1,9 @@
 
     <md-list>
-        <md-list-item ng-repeat="it in ul.users">
-            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-                <img src="assets/svg/location.svg" class="icon"/>
-                {{it.name}} <span style="padding-left:10px;text-transform:initial;font-weight:300">{{it.content}}</span>
+        <md-list-item ng-repeat="it in ul.items">
+            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }" style="height: 60px;">
+                <i class="material-icons list-icon" >{{it.category}}</i>
+                <span class="list-name">{{it.name}}</span>
             </md-button>
         </md-list-item>
     </md-list>

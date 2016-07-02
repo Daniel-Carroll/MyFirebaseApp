@@ -114,19 +114,14 @@ md-toolbar h1 {
   overflow: hidden;
   margin: 0px;
   vertical-align: middle;
-  zoom:0.70;
   transform: translateZ(0);
   -webkit-transform: scale(0.70);
   -moz-transform:scale(0.70);
 }
 .icon{
   position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 60px;
-  height: 60px;
+  font-size: 32px;
   margin: 0px;
-  zoom:0.70;
 }
 
 md-content{
@@ -158,6 +153,8 @@ div.md-nav-bar{
   min-width: 70px;
   font-size: 12px;
 }
+
+/* Module Header */
 .module-header{
   border-bottom: 1px solid black;
 }
@@ -173,7 +170,6 @@ div.md-nav-bar{
   padding:5px;
 
 }
-
 .action-button{
   position:absolute;
   right:25px;
@@ -181,4 +177,13 @@ div.md-nav-bar{
 }
 #control-group{
   height:50px;
+}
+
+/* sidebar list */
+.list-name{
+  padding:10px;
+}
+.list-icon{
+  position:relative;
+  top:5px;
 }

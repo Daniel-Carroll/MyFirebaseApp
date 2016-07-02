@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('stuff')
-         .service('storeService', ['$q', StoreService]);
+         .service('CategoryService', ['$q', CategoryService]);
 
   /**
    * Users DataService
@@ -12,25 +12,27 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function StoreService($q){
-    var stores = [
+  function CategoryService($q){
+    var categories = [
       {
-        storeNumber: '699'
+        category: 'adb',
+        name: "Collectible Figures"
       },
       {
-        storeNumber: '623'
+        category: 'tag_faces',
+        name: "Happy Things"
       },
       {
-        storeNumber: '694'
+        category: 'laptop',
+        name: 'Computer'
              },
       {
-        storeNumber: '666'
+        category: 'photo',
+        name: 'Miscellaneous'
               },
       {
-        storeNumber: '654'
-              },
-      {
-        storeNumber: '109'
+        category:"directions_car",
+        name: "Vehicle"
               }
     ];
 
@@ -38,9 +40,9 @@
 
     // Promise-based API
     return {
-      loadAllStores : function() {
+      loadAllCategories : function() {
         // Simulate async nature of real remote calls
-        return $q.when(stores);
+        return $q.when(categories);
       }
     };
   }

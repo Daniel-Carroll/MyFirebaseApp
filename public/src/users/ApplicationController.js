@@ -3,7 +3,7 @@
   angular
        .module('stuff')
        .controller('AppController', [
-          'userService', 'storeService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
+          'itemService', 'CategoryService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
            AppController
        ]);
 
@@ -18,9 +18,9 @@
     var self = this;
 
     self.selected     = null;
-    self.users        = [ ];
-    self.stores       = null;
-    self.selectedStore= null;
+    self.items        = [ ];
+    self.categories       = null;
+    self.selectedCategory= null;
     self.selectUser   = selectUser;
     self.toggleList   = toggleUsersList;
     self.makeContact  = makeContact;
@@ -29,17 +29,17 @@
     // Load all registered users
 
     userService
-          .loadAllUsers()
-          .then( function( users ) {
-            self.users    = [].concat(users);
-            self.selected = users[0];
+          .loadAllItems()
+          .then( function( items ) {
+            self.items    = [].concat(items);
+            self.selected = items[0];
           });
 
     storeService
-        .loadAllStores()
-        .then( function( stores ){
-          self.stores = [].concat(stores);
-          self.selectedStore = stores[0].storeNumber;
+        .loadAllCategories()
+        .then( function( category ){
+          self.stores = [].concat(category);
+          self.selectedCategory = category[0].name;
         })
 
     // *********************************
