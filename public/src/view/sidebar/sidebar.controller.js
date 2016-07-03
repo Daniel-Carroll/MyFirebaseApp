@@ -9,6 +9,7 @@
 
     function SidebarController() {
         var sidebar= this;
+        sidebar.sort="Item"
         sidebar.sortCategories = ["Category", "Item"];
 
 

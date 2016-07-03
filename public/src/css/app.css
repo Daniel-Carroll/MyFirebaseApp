@@ -155,8 +155,12 @@ div.md-nav-bar{
 }
 
 /* Module Header */
+.item-card-full{
+  background-color: #FFFFFF;
+
+}
 .module-header{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #e8e8e8;
 }
 .module-header-title{
   font-size: 24px;
@@ -169,6 +173,11 @@ div.md-nav-bar{
   font-weight: normal;
   padding:5px;
 
+}
+
+/* Module Main Content */
+.module-content{
+  height: 500px;
 }
 .action-button{
   position:absolute;

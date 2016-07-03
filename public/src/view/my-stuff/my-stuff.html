@@ -1,48 +1,14 @@
-<md-content flex id="content">
-    <div class="module-header" layout="row" layout-align="left center">
-        <i class="material-icons icon" >{{ul.selected.category}}</i>
-        <span class="module-header-title">{{ul.selected.name}}</span>
-        <span class="module-header-sub">{{ul.selected.content}}</span>
-
-
+<md-content layout="column" id="content">
+    <div class="md-whiteframe-1dp item-card-full">
+        <div class="module-header" layout="row" layout-align="center center">
+            <i class="material-icons icon" >{{ul.selected.category}}</i>
+            <span class="module-header-title">{{ul.selected.name}}</span>
+            <span class="module-header-sub">{{ul.selected.content}}</span>
+        </div>
+        <div class="module-content" layout="row" layout-align="center center">
+                {{ul.selected.description}}
+        </div>
     </div>
 
-
-    <md-subheader class="md-primary" style="background-color:#ebebeb">699Pkg01</md-subheader>
-    <div flex layout="row" layout-wrap>
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card with image</span>
-                    <span class="md-subhead">Small</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button ui-sref="home.nested">Action 2</md-button>
-                <div ui-view></div>
-
-            </md-card-actions>
-        </md-card>
-
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card with image</span>
-                    <span class="md-subhead">Small</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
 </md-content>
 
