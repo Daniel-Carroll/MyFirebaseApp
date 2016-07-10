@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('stuff')
-         .service('itemService', ['$q', ItemService]);
+         .service('ItemService', ['$q', ItemService]);
 
   /**
    * Users DataService

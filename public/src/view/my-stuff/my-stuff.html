@@ -1,14 +1,57 @@
-<md-content layout="column" id="content">
-    <div class="md-whiteframe-1dp item-card-full">
-        <div class="module-header" layout="row" layout-align="center center">
-            <i class="material-icons icon" >{{ul.selected.category}}</i>
-            <span class="module-header-title">{{ul.selected.name}}</span>
-            <span class="module-header-sub">{{ul.selected.content}}</span>
-        </div>
-        <div class="module-content" layout="row" layout-align="center center">
-                {{ul.selected.description}}
-        </div>
+<md-content class="module-header-container">
+    <md-nav-bar nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-click="ul.nav='categories'" name="categories" active="active">Categories</md-nav-item>
+        <md-nav-item md-nav-click="ul.nav='items'" name="items">Items</md-nav-item>
+    </md-nav-bar>
+</md-content>
+
+<md-content layout="row" layout-xs="column" layout-wrap>
+
+    <div ng-if="ul.nav=='items'" ng-repeat="item in ul.items" flex="25" flex-xs="100">
+        <md-card style="height:200px;">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{item.name}}</span>
+                    <span class="md-subhead">{{item.description}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Details</md-button>
+                <i class="material-icons">more_vert</i>
+            </md-card-actions>
+        </md-card>
     </div>
+
+
+    <div ng-if="ul.nav=='categories'" ng-repeat="cat in ul.categories" flex="25" flex-xs="50">
+        <md-card>
+            <md-card-header style="height:70px;">
+                <md-card-header-text>
+                    <span class="md-title" style="font-size:16px;">{{cat.name}}</span>
+                    <span class="md-subhead">Items: 4</span>
+                </md-card-header-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media">
+                        <span><i class="material-icons">{{cat.category}}</i></span>
+                    </div>
+                </md-card-title-media>
+            </md-card-header>
+            <md-card-actions layout="row" layout-align="end center" style="height:30px;">
+                <i class="material-icons">more_vert</i>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+
 
 </md-content>
 
+<md-button class="md-fab md-primary fixed-button" aria-label="Use Android">
+    <md-icon><i class="material-icons">add</i></md-icon>
+    <md-tooltip md-direction="left">
+        Add Category
+    </md-tooltip>
+</md-button>

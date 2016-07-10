@@ -27,15 +27,19 @@
   <body ng-app="myApp" layout="column" ng-controller="AppController as ul" ng-cloak>
 
 
-    <div data-ng-include="'src/view/header/header.html'"></div>
+    <div data-ng-include="'src/view/header/header.html'" ></div>
 
     <div flex layout="row">
 
-        <md-sidenav ng-include="'src/view/sidebar/sidebar.html'" ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" style="max-width: 100%;
-                overflow-x: hidden;overflow-y:hidden">
+        <md-sidenav ng-include="'src/view/sidebar/sidebar.html'"
+                    ng-click="ul.toggleList()"
+                    md-is-locked-open="$mdMedia('gt-sm')"
+                    md-component-id="left"
+                    class="md-whiteframe-z2 sidebar" style="max-width: 100%;
+                overflow-x: hidden;overflow-y:hidden;">
         </md-sidenav>
 
-        <div ui-view flex></div>
+        <div ui-view style="overflow-y:auto;overflow-x: hidden" flex></div>
 
     </div>
 
@@ -69,6 +73,7 @@
     <!-- Directives -->
     <script src="src/view/sidebar/sidebar.directive.js"></script>
     <script src="src/js/directives/test.directive.js"></script>
+    <script src="src/js/directives/firebase-configs/firebase-configs.directive.js"></script>
 
     <script type="text/javascript">
 
@@ -86,23 +91,14 @@
                       .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
                       $mdThemingProvider.theme('default')
-                          .primaryPalette('red')
+                          .primaryPalette('indigo')
                           .accentPalette('blue');
 
               });
 
     </script>
 
-    <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDfm6VxmGuc3XmQFIyuuxyUxLEmoL9Tda0",
-    authDomain: "mywebapp-25bc0.firebaseapp.com",
-    databaseURL: "https://mywebapp-25bc0.firebaseio.com",
-    storageBucket: "mywebapp-25bc0.appspot.com",
-  };
-  firebase.initializeApp(config);
-    </script>
+    <firebase-configs></firebase-configs>
 
   </body>
 </html>

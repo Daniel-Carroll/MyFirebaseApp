@@ -12,6 +12,25 @@
         sidebar.sort="Item"
         sidebar.sortCategories = ["Category", "Item"];
 
+        sidebar.sitePages = [
+            {
+                "name": "Home",
+                "state": "home",
+                "icon": "home"
+            },
+            {
+                "name": "My Stuff",
+                "state": "my-stuff",
+                "icon": "dashboard"
+            },
+            {
+                "name": "World Stuff",
+                "state": "world-stuff",
+                "icon": "public"
+            }
+
+        ]
+
 
     }
 

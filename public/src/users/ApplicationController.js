@@ -3,7 +3,7 @@
   angular
        .module('stuff')
        .controller('AppController', [
-          'itemService', 'CategoryService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
+          'ItemService', 'CategoryService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
            AppController
        ]);
 
@@ -14,7 +14,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AppController( userService, storeService, $mdSidenav, $mdBottomSheet, $timeout, $log  ) {
+  function AppController( itemService, categoryService, $mdSidenav, $mdBottomSheet, $timeout, $log  ) {
     var self = this;
 
     self.selected     = null;
@@ -25,17 +25,18 @@
     self.toggleList   = toggleUsersList;
     self.makeContact  = makeContact;
     self.change       = false;
+    self.nav          = 'categories';
 
     // Load all registered users
 
-    userService
+    itemService
           .loadAllItems()
           .then( function( items ) {
             self.items    = [].concat(items);
             self.selected = items[0];
           });
 
-    storeService
+    categoryService
         .loadAllCategories()
         .then( function( category ){
           self.categories = [].concat(category);

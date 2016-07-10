@@ -4,7 +4,7 @@ html, body {
   height:100%;
   margin: 0px;
   padding: 0px;
-  background-color: #ebebeb;
+  background-color: #f1f1f1;
 }
 
 /* Toolbar area */
@@ -50,6 +50,7 @@ md-list-item > button {
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 #content .md-button.share {
@@ -125,7 +126,7 @@ md-toolbar h1 {
 }
 
 md-content{
-  background-color: #ebebeb;
+  background-color: #f1f1f1;
 }
 
 md-bottom-sheet  md-icon {
@@ -155,12 +156,12 @@ div.md-nav-bar{
 }
 
 /* Module Header */
-.item-card-full{
+.module-header-container{
   background-color: #FFFFFF;
-
+  border-bottom: solid 1px #e8e8e8;
 }
 .module-header{
-  border-bottom: 1px solid #e8e8e8;
+  margin: 10px;
 }
 .module-header-title{
   font-size: 24px;
@@ -195,4 +196,23 @@ div.md-nav-bar{
 .list-icon{
   position:relative;
   top:5px;
+}
+
+/* Global items   */
+.card{
+  background-color: #FFFFFF;
+}
+.card:hover{
+
+}
+
+.sidebar{
+  color: #CCC;
+  width:250px;
+}
+
+.fixed-button{
+  position:fixed;
+  right:10px;
+  bottom:10px;
 }

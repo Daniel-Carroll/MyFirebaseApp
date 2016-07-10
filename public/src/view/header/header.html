@@ -1,5 +1,10 @@
-<md-toolbar layout="row" >
+<md-toolbar layout="row" class="md-whiteframe-z2" >
     <div class="md-toolbar-tools">
+
+        <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+            <md-icon md-svg-icon="menu" ></md-icon>
+        </md-button>
+
         <h1><i class="material-icons" style="position:relative;top:4px;">monetization_on</i>TUFF</h1>
 
         <span flex></span>
@@ -10,13 +15,3 @@
 
 </md-toolbar>
 
-
-<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" layout="row" layout-align="center center" class="navbar">
-    <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
-        <md-icon md-svg-icon="menu" ></md-icon>
-    </md-button>
-
-    <md-nav-item hide-xs md-nav-sref="home" name="page1">Home</md-nav-item>
-    <md-nav-item hide-xs md-nav-sref="my-stuff" name="page2">My Stuff</md-nav-item
-
-</md-nav-bar>

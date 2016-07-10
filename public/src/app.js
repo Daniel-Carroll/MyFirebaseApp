@@ -17,6 +17,10 @@
               url:'/my-stuff',
               templateUrl: "src/view/my-stuff/my-stuff.html",
             })
+            .state('world-stuff',{
+                url:'/world-stuff',
+                templateUrl: "src/view/world-stuff/world-stuff.html"
+            })
 
       })
 
