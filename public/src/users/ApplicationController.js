@@ -17,31 +17,10 @@
   function AppController( itemService, categoryService, $mdSidenav, $mdBottomSheet, $timeout, $log  ) {
     var self = this;
 
-    self.selected     = null;
-    self.items        = [ ];
-    self.categories       = null;
-    self.selectedCategory= null;
-    self.selectItem   = selectItem;
     self.toggleList   = toggleUsersList;
     self.makeContact  = makeContact;
     self.change       = false;
     self.nav          = 'categories';
-
-    // Load all registered users
-
-    itemService
-          .loadAllItems()
-          .then( function( items ) {
-            self.items    = [].concat(items);
-            self.selected = items[0];
-          });
-
-    categoryService
-        .loadAllCategories()
-        .then( function( category ){
-          self.categories = [].concat(category);
-          self.selectedCategory = category[0].name;
-        })
 
     // *********************************
     // Internal methods
@@ -52,21 +31,6 @@
      */
     function toggleUsersList() {
       $mdSidenav('left').toggle();
-    }
-
-    /**
-    * Set global Store variable
-    */
-    function  changeStore () {
-
-    }
-
-    /**
-     * Select the current avatars
-     * @param menuId
-     */
-    function selectItem ( user ) {
-      self.selected = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
     /**

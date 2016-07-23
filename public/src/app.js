@@ -16,6 +16,8 @@
             .state('my-stuff',{
               url:'/my-stuff',
               templateUrl: "src/view/my-stuff/my-stuff.html",
+              controller: 'myStuffController',
+              controllerAs: 'self'
             })
             .state('world-stuff',{
                 url:'/world-stuff',
