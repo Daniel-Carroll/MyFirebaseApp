@@ -216,3 +216,17 @@ div.md-nav-bar{
   right:10px;
   bottom:10px;
 }
+
+/* Collection Details */
+
+.banner-image{
+  position:static;
+  overflow:hidden;
+  z-index:-100;
+  width:100%;
+}
+.collection-detail{
+  padding:15px;
+  margin:10%;
+  background-color: white;
+}

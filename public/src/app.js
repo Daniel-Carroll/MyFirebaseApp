@@ -19,12 +19,6 @@
               controller: 'myStuffController',
               controllerAs: 'self'
             })
-            .state('collections.detail',{
-                url:'/collections/detail',
-                templateUrl: "src/view/collections/collection-detail.html",
-                controller: 'myStuffController',
-                controllerAs: 'self'
-            })
             .state('notes',{
                 url:'/notes',
                 templateUrl: "src/view/world-stuff/world-stuff.html"
