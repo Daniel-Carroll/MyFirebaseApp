@@ -13,14 +13,20 @@
               url:'/home',
               templateUrl: "src/view/home/home.html"
             })
-            .state('my-stuff',{
-              url:'/my-stuff',
-              templateUrl: "src/view/my-stuff/my-stuff.html",
+            .state('collections',{
+              url:'/collections',
+              templateUrl: "src/view/collections/collections.html",
               controller: 'myStuffController',
               controllerAs: 'self'
             })
-            .state('world-stuff',{
-                url:'/world-stuff',
+            .state('collections.detail',{
+                url:'/collections/detail',
+                templateUrl: "src/view/collections/collection-detail.html",
+                controller: 'myStuffController',
+                controllerAs: 'self'
+            })
+            .state('notes',{
+                url:'/notes',
                 templateUrl: "src/view/world-stuff/world-stuff.html"
             })
 

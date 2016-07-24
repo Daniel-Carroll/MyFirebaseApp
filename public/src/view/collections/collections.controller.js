@@ -27,13 +27,6 @@
         self.selectItem = selectItem;
         self.selectedItem = null;
 
-        self.list = [
-            "One",
-            "Two",
-            "Three",
-            "Four",
-            "Five"
-        ];
         self.selected = null;
         self.selectList = function(item){
             self.selected = item;
@@ -42,7 +35,7 @@
         itemService
             .loadAllItems()
             .then( function(items){
-            self.items = [].concat(items);
+                self.items = [].concat(items);
         })
         categoryService
             .loadAllCategories()
@@ -55,6 +48,9 @@
         }
         function selectCategory( category ){
             self.selectedCategory = category;
+        }
+        function addCategory(){
+
         }
         
     }

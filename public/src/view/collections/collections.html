@@ -1,0 +1,29 @@
+<md-content layout="row" layout-xs="column" layout-wrap>
+
+    <div ng-repeat="collection in self.categories" flex="25" flex-sm="50" flex-xs="100">
+        <md-card>
+            <img ng-src="src/images/material-design-art.jpg" class="md-card-image" alt="Collection Image">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{collection.name}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>
+                    Items: 4
+                </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary">Open</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+</md-content>
+
+<md-button class="md-fab md-secondary fixed-button" aria-label="Use Android">
+    <md-icon><i class="material-icons">add</i></md-icon>
+    <md-tooltip md-direction="left">
+        Add Category
+    </md-tooltip>
+</md-button>

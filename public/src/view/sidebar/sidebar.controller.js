@@ -19,12 +19,12 @@
                 "icon": "home"
             },
             {
-                "name": "My Stuff",
-                "state": "my-stuff",
+                "name": "Collections",
+                "state": "collections",
                 "icon": "dashboard"
             },
             {
-                "name": "World Stuff",
+                "name": "Notes",
                 "state": "world-stuff",
                 "icon": "public"
             }
