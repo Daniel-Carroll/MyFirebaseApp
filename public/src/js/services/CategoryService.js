@@ -17,8 +17,7 @@
     
     self.rootRef = appConstants.rootRef;
     self.ref = self.rootRef.child('Users')
-    self.
-    var categories = [
+    self.categories = [
       {
         category: 'adb',
         name: "Collectible Figures"
