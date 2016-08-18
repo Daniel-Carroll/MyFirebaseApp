@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('stuff')
-         .service('CategoryService', ['$q', CategoryService]);
+         .service('CategoryService', ['$q','$firebaseObject', 'appConstants', CategoryService]);
 
   /**
    * Users DataService
@@ -12,7 +12,12 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function CategoryService($q){
+  function CategoryService($q, $firebaseObject, appConstants){
+    var self = this;
+    
+    self.rootRef = appConstants.rootRef;
+    self.ref = self.rootRef.child('Users')
+    self.
     var categories = [
       {
         category: 'adb',
@@ -20,7 +25,7 @@
       },
       {
         category: 'tag_faces',
-        name: "Happy Things"
+        name: "Souvenirs"
       },
       {
         category: 'laptop',

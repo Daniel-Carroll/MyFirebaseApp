@@ -1,0 +1,48 @@
+<div>
+    <md-button ng-click="self.selectedItem=null">Back</md-button>
+</div>
+
+<div layout="column">
+
+        <md-card flex="100" class="collection-detail md-whiteframe-1dp">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">Item Details</span>
+                </md-card-header-text>
+            </md-card-header>
+
+                <md-divider></md-divider>
+
+            <md-card-title>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media" style="margin-right:10px;">
+                        <img ng-src="src/images/material-design-icon.png">
+                    </div>
+                </md-card-title-media>
+                <md-card-title-text>
+                    <span class="md-headline">{{self.selectedItem.name}}</span>
+                    <span class="md-subhead">Quantity: {{self.selectedItem.qty}}</span>
+                    <span class="md-subhead">Location: {{self.selectedItem.location}}</span>
+                    <span class="md-subhead">Bought: {{self.selectedItem.dateObtained}}</span>
+                    <span class="md-subhead">Origin: {{self.selectedItem.origin}}</span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+
+        <md-card flex="100" class="collection-detail md-whiteframe-1dp">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-headline">Description</span>
+                </md-card-header-text>
+            </md-card-header>
+
+                <md-divider></md-divider>
+            <md-card-title>
+
+                <md-card-title-text>
+                    <span class="md-subhead">{{self.selectedItem.description}}</span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+
+</div>

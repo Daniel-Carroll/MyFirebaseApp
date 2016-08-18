@@ -3,7 +3,7 @@
 
   // Prepare the 'users' module for subsequent registration of controllers and delegates
   angular
-      .module('stuff', [ 'ngMaterial', 'ui.router' ])
+      .module('stuff', [ 'ngMaterial', 'ui.router', 'firebase' ])
       .config(function($stateProvider, $urlRouterProvider){
 
         $urlRouterProvider.otherwise('/home');

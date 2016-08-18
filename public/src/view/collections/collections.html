@@ -1,11 +1,11 @@
 <md-content ng-if="!self.selectedCategory" layout="row" layout-xs="column" layout-wrap>
 
-    <div ng-repeat="collection in self.categories" flex="25" flex-sm="50" flex-xs="100">
+    <div ng-repeat="collection in self.categories" flex="20" flex-md="33" flex-sm="50" flex-xs="100">
     <md-card>
-        <img ng-src="src/images/material-design-art.jpg" class="md-card-image" alt="Collection Image">
+        <img ng-src="src/images/material-design-art.jpg" class="md-card-image" alt="Collection Image" hide-xs>
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">{{collection.name}}</span>
+                <span class="md-headline card-header">{{collection.name}}</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -21,7 +21,8 @@
 
 </md-content>
 
-<collection-details ng-if="self.selectedCategory"></collection-details>
+<collection-details ng-if="self.selectedCategory && !self.selectedItem"></collection-details>
+<item-details ng-if="self.selectedCategory && self.selectedItem"></item-details>
 
 <md-button class="md-fab md-secondary fixed-button" aria-label="Use Android">
     <md-icon><i class="material-icons">add</i></md-icon>

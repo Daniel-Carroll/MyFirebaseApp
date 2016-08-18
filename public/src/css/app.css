@@ -205,6 +205,9 @@ div.md-nav-bar{
 .card:hover{
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
 }
+.card-header{
+  font-size:20px;
+}
 
 .sidebar{
   color: #CCC;
@@ -227,6 +230,6 @@ div.md-nav-bar{
 }
 .collection-detail{
   padding:15px;
-  margin:10%;
+  margin:1% 5%;
   background-color: white;
 }

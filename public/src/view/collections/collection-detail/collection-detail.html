@@ -1,32 +1,30 @@
-<div style="height:10px;">
-    <img ng-src="src/images/material-design-art3.png" class="banner-image">
-</div>
 <div>
     <md-button ng-click="self.selectedCategory=null">Back</md-button>
 </div>
 
 <div layout="column">
+
     <md-whiteframe flex="100" class="collection-detail md-whiteframe-1dp">
-        <h4>{{self.selectedCategory.name}}</h4>
-        <div layout="row" layout-xs="column" layout-wrap>
-            <div ng-repeat="item in self.items" flex="33" flex-sm="50" flex-xs="100">
-                <md-card>
-                    <img ng-src="src/images/material-design-art2.png" class="md-card-image" alt="Collection Image">
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">{{item.name}}</span>
-                        </md-card-title-text>
-                    </md-card-title>
-                    <md-card-content>
-                        <p>
-                            {{item.description}}
-                        </p>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-primary" ng-click="self.selectCategory(collection)">Open</md-button>
-                    </md-card-actions>
-                </md-card>
-            </div>
-        </div>
+        <h2>{{self.selectedCategory.name}}</h2>
     </md-whiteframe>
+
+    <div layout="row" layout-xs="column" style="margin:1% 5%" layout-wrap>
+        <div ng-repeat="item in self.items" flex="50" flex-sm="50" flex-xs="100">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline card-header">{{item.name}}</span>
+                        <span class="md-subhead">{{item.description}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-md card-media"><img ng-src="src/images/material-design-icon.png"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="self.selectItem(item)">Details</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+
 </div>
