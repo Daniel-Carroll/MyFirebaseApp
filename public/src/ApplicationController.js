@@ -2,9 +2,6 @@
 
   angular
        .module('stuff')
-       .constant("appConstants", {
-         "rootRef": firebase.database().ref().child('mywebapp-25bc0') 
-       })
        .controller('AppController', [
           'ItemService', 'CategoryService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
            AppController

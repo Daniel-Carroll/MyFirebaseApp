@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('stuff')
-         .service('CategoryService', ['$q','$firebaseObject', 'appConstants', CategoryService]);
+         .service('CategoryService', ['$q','$firebaseObject', CategoryService]);
 
   /**
    * Users DataService
@@ -12,11 +12,9 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function CategoryService($q, $firebaseObject, appConstants){
+  function CategoryService($q, $firebaseObject){
     var self = this;
-    
-    self.rootRef = appConstants.rootRef;
-    self.ref = self.rootRef.child('Users')
+   
     self.categories = [
       {
         category: 'adb',
@@ -46,7 +44,7 @@
     return {
       loadAllCategories : function() {
         // Simulate async nature of real remote calls
-        return $q.when(categories);
+        return $q.when(self.categories);
       }
     };
   }

@@ -1,0 +1,14 @@
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.get('/chicken', function (req, res){
+    res.send('I am a chicken')
+});
+
+app.listen(5000, function () {
+  console.log('Example app listening on port 5000!');
+});
