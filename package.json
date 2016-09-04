@@ -2,7 +2,7 @@
   "name": "myfirebaseapp",
   "version": "1.0.0",
   "description": "Stuff Manager Application",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "angular": "^1.5.8",
     "angular-animate": "^1.5.5",
