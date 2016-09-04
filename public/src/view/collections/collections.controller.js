@@ -5,10 +5,7 @@
 
     angular
         .module('stuff')
-        .controller('myStuffController', [
-            'ItemService', 'CategoryService', '$log',
-            myStuffController
-        ]);
+        .controller('myStuffController', myStuffController);
 
     /**
      * Main Controller for the Angular Material Starter App
@@ -17,13 +14,15 @@
      * @param avatarsService
      * @constructor
      */
-    function myStuffController( itemService, categoryService, $mdSidenav, $mdBottomSheet, $timeout, $log  ) {
+    myStuffController.$inject = ['ItemService', 'CategoryService', '$log']
+    function myStuffController( ItemService, CategoryService, $log) {
         var self = this;
 
-        self.categories = [];
+        self.collections = [];
         self.items = [];
-        self.selectCategory = selectCategory;
-        self.selectedCategory = null;
+
+        self.selectCollection = selectCollection;
+        self.selectedCollection = null;
         self.selectItem = selectItem;
         self.selectedItem = null;
 
@@ -32,26 +31,38 @@
             self.selected = item;
         }
 
-        itemService
-            .loadAllItems()
-            .then( function(items){
-                self.items = [].concat(items);
-        })
-        categoryService
-            .loadAllCategories()
-            .then(function( categories){
-                self.categories = [].concat(categories);
-            })
+        activate();
+
+        function activate(){
+            return getAllCollections().then(function(){
+               console.log('Collections Loaded')
+            });
+
+        }
+
+        function getAllCollections(){
+            return CategoryService.getAllCollections()
+                .then(function(data) {
+                    self.collections = data;
+                    return self.collections;
+                });
+        }
+
+        function getAllItems(){
+            return ItemService.getAllItems()
+                .then(function(data){
+                   self.items = data;
+                   return self.items;
+                });
+        }
 
         function selectItem( item ){
             self.selectedItem = item;
         }
-        function selectCategory( category ){
-            self.selectedCategory = category;
+        function selectCollection( collection ){
+            self.selectedCollection = collection;
         }
-        function addCategory(){
 
-        }
         
     }
 

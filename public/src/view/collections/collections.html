@@ -1,6 +1,6 @@
-<md-content ng-if="!self.selectedCategory" layout="row" layout-xs="column" layout-wrap>
+<md-content ng-if="!self.selectedCollection" layout="row" layout-xs="column" layout-wrap>
 
-    <div ng-repeat="collection in self.categories" flex="20" flex-md="33" flex-sm="50" flex-xs="100">
+    <div ng-repeat="collection in self.collections" flex="20" flex-md="33" flex-sm="50" flex-xs="100">
     <md-card>
         <img ng-src="src/images/material-design-art.jpg" class="md-card-image" alt="Collection Image" hide-xs>
         <md-card-title>
@@ -10,19 +10,20 @@
         </md-card-title>
         <md-card-content>
             <p>
-                Items: 4
+                Items: {{collection.itemList.length}}
             </p>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-primary" ng-click="self.selectCategory(collection)">Open</md-button>
+            <md-button class="md-primary">Details</md-button>
+            <md-button class="md-primary" ng-click="self.selectCollection(collection)">Open</md-button>
         </md-card-actions>
     </md-card>
 </div>
 
 </md-content>
 
-<collection-details ng-if="self.selectedCategory && !self.selectedItem"></collection-details>
-<item-details ng-if="self.selectedCategory && self.selectedItem"></item-details>
+<collection-details ng-if="self.selectedCollection && !self.selectedItem"></collection-details>
+<item-details ng-if="self.selectedCollection && self.selectedItem"></item-details>
 
 <md-button class="md-fab md-secondary fixed-button" aria-label="Use Android">
     <md-icon><i class="material-icons">add</i></md-icon>

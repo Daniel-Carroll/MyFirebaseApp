@@ -18,6 +18,7 @@
     "angular-mocks": "^1.4.9",
     "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
+    "http-proxy-middleware": "^0.17.1",
     "live-server": "^0.9.1"
   },
   "scripts": {

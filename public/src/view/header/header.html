@@ -10,7 +10,12 @@
         <span flex></span>
 
         <span flex></span>
-        <img src="assets/svg/user.svg" style="margin-right:5px;"><span style="font-size:14px;">Dirty Dan</span><img src="assets/svg/more_vert.svg" style="margin-left:5px;">
+        <img src="assets/svg/user.svg" style="margin-right:5px;">
+            <span ng-if="$window.sessionStorage.getItem('username')" style="font-size:14px;">Dirty Dan</span>
+            <span ng-if="!$window.sessionStorage.getItem('username')" style="font-size:14px;">
+                <a ng-sref="">Create an Account!</a>
+            </span>
+        <img src="assets/svg/more_vert.svg" style="margin-left:5px;">
     </div>
 
 </md-toolbar>
